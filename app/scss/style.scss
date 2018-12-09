@@ -1,6 +1,9 @@
 $colOne: #5094f2;
-$colTwo: #d94748;
+$colOneDark: #3276e0;
+$colTwo: #d84444;
+$colTwoDark: #d42323;
 $colThree: #ebbb11;
+$colThreeDark: #ddad00;
 $colFont: #909090;
 
 
@@ -104,6 +107,9 @@ _resh{
 	margin-left: 26px;
 	line-height: 40px;
 	font-weight: 400;
+	&:hover{
+		text-shadow: 0 0 5px #00000080;
+	}
 	&::before{
 		content:'';
 		display: inline-block;
@@ -144,6 +150,8 @@ _resh{
 		margin-right: 11%;
 	}
 	&__info{
+		min-width: 940px;
+
 	}
 	
 	&__head{
@@ -179,9 +187,14 @@ _resh{
 	color:white;
 	// font-weight: 100;
 	vertical-align: middle;
+	&:hover{
+		background-color: $colOneDark;
+
+	}
 
 	&-circle{
 		padding-left: 4px;
+		padding-bottom: 4px;
 		&::before{
 			content:'';
 			display: inline-block;
@@ -227,6 +240,7 @@ _resh{
 		width: 186px;
 		height: 186px;
 		border-radius: 93px;
+		cursor: pointer;
 		&::after{
 			display: block;
 			content:'';
@@ -236,6 +250,9 @@ _resh{
 		}
 		&-pen{
 			background-color: $colOne;
+			&:hover{
+				background-color: $colOneDark;
+			}
 			&::after{
 				background: url('../img/Shape 3@1X.png') no-repeat;
 				background-position: center center;
@@ -243,6 +260,9 @@ _resh{
 		}
 		&-screen{
 			background-color: $colTwo;
+			&:hover{
+				background-color: $colTwoDark;
+			}
 			&::after{
 				background: url('../img/Shape 6@1X.png') no-repeat;
 				background-position: center center;
@@ -250,6 +270,9 @@ _resh{
 		}
 		&-basket{
 			background-color: $colThree;
+			&:hover{
+				background-color: $colThreeDark;
+			}
 			&::after{
 				background: url('../img/Shape 5@1X.png') no-repeat;
 				background-position: center center;
