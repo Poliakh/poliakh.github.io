@@ -11,6 +11,7 @@ let createCard = (obj) => {
 	newCard.style.backgroundImage = `url("${obj.preview}")`;
 	return newCard;
 }
+// parentCards
 let parsObj = obj =>{
 	for (let key in obj){
 		mylist.appendChild(createCard(obj[key]));

@@ -13,14 +13,14 @@
 			},
 	"upbusiness": {
 				"gitpage":"https://poliakh.github.io/myportfolio/makets/upbusiness",
-				"github":"upbusines",
-				"preview":"preview/upbusines.jpg",
+				"github":"https://github.com/Poliakh/03-Maket.git",
+				"preview":"preview/upbusiness.jpg",
 				"difficulty":"5"
 			},
 	"biseline": {
 				"gitpage":"https://poliakh.github.io/myportfolio/makets/biseline",
 				"github":"https://github.com/Poliakh/maket-02.git",
-				"preview":"preview/upbusiness.jpg",
+				"preview":"preview/biseline.jpg",
 				"difficulty":"3"
 			}
 }
