@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'ArialBold';
+    src: url('../fonts/Arial-BoldMT.eot');
+    src: url('../fonts/Arial-BoldMT.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Arial-BoldMT.woff2') format('woff2'),
+        url('../fonts/Arial-BoldMT.woff') format('woff'),
+        url('../fonts/Arial-BoldMT.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyriadPro';
+    src: url('../fonts/MyriadPro-Regular.eot');
+    src: url('../fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MyriadPro-Regular.woff2') format('woff2'),
+        url('../fonts/MyriadPro-Regular.woff') format('woff'),
+        url('../fonts/MyriadPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ArialMT';
+    src: url('../fonts/ArialMT.eot');
+    src: url('../fonts/ArialMT.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ArialMT.woff2') format('woff2'),
+        url('../fonts/ArialMT.woff') format('woff'),
+        url('../fonts/ArialMT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+	font-family: 'LatoBlack';
+	src: url('../fonts/latoblack.woff2') format('woff2'),
+		url('../fonts/latoblack.woff') format('woff'),
+		url('../fonts/latoblack.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face{
+	font-family: 'LatoRegular';
+	src: url('../fonts/latoregular.woff2') format('woff2'),
+		url('../fonts/latoregular.woff') format('woff'),
+		url('../fonts/latoregular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
