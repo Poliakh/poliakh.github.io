@@ -24,7 +24,7 @@
 		</div>
 		<!-- <a class="logo link navbar__logo" href="index.html">My Portfolio</a> -->
 		<nav class="nav">
-			<ul class="menu nav__menu">
+			<ul class="menu nav__menu " data-wow-offset="-200">
 				<li class="wow fadeInDown"><a href="#home" class="link nav__link">home</a></li>
 				<li class="wow fadeInDown"><a href="#port" class="link nav__link">portfolio</a></li>
 				<li class="wow fadeInDown"><a href="#contacts" class="link nav__link">about</a></li>
@@ -85,7 +85,7 @@
 	<div class="container">
 		<h2 class="portf__head wow fadeIn" data-wow-offset="50">my portfolio</h2>
 
-		<img class="loader" src="./img/ajax-loader.gif">
+		<img class="loader" src="./img/ajax-loader.gif" alt="boot loader display">
 		<div class="cardWrap portf__cardWrap">
 			<div hidden class="card wow fadeInUp" data-wow-offset="100">
 				<div class="card__link">
@@ -173,10 +173,9 @@
 						<!-- <li>Accusamus, delectus at.</li> -->
 					</ul>
 				</div>
-				<a href="https://poliakh.github.io/myportfolio/makets/resume" target = "_blank">
-
-					<button class="showResume wrapCont__download wow fadeInUp" data-wow-offset="200">Resume</button>
-				</a>
+				<form action="https://poliakh.github.io/myportfolio/makets/resume" target = "_blank">
+					<button class="showResume wrapCont__download wow fadeInUp" data-wow-offset="200" type="submit">Resume</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -254,8 +253,7 @@
 </footer> -->
 	</div>
 	<script src="script/wow.js"></script>
-
-	<script src="./script/script.js"></script>
+	<script src="script/script.js"></script>
 </body>
 </html>
 
