@@ -394,7 +394,3 @@ var sliderPopup = new Slider('popup__slider', 'popup__list-check', 'popup__img',
 var select = new SelectShoe('select', 'btnLeft', 'btnRight', 'select__cardSlide', 'cardBy__button-list', ['red', 'black']);
 var myPopup = new Popup('popupRed', '.cardBy__img', 'popup-hide', 'cls', 'popup__slider', true);
 var infSlider = new InfSlider('info__list', 'info__item', 'info__item-check', 'info__cont', 'slideInfo-vis');
-=======
-console.log('this IE');
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJzY3JpcHRfSUUuanMiXSwic291cmNlc0NvbnRlbnQiOlsiY29uc29sZS5sb2coJ3RoaXMgSUUnKTtcclxuIl0sImZpbGUiOiJzY3JpcHRfSUUuanMifQ==
->>>>>>> 7b825b4c8ba75c640a09573999cdf6ae0c8b18e2

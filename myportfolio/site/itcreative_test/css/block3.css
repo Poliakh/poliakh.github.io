@@ -72,7 +72,6 @@
 	overflow: hidden;
 	-o-text-overflow: ellipsis;
 	   text-overflow: ellipsis;
-<<<<<<< HEAD
 }
 .info__item:hover,
 .info__item:focus,
@@ -371,20 +370,3 @@
 		position: relative;
 	} */
 }
-=======
-.info__item:focus,
-.info__item-check {
-.info__item:hover .info__check,
-.info__item-check .info__check{
-
-.info__item:hover .info__text,
-.info__item-check .info__text{
-		height: 398px;
-	.slideInfo{
-		height: auto;
-	}
-	.slideInfo__img {
-		height: auto;
-	}
-	
->>>>>>> 7b825b4c8ba75c640a09573999cdf6ae0c8b18e2
