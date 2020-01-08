@@ -108,19 +108,6 @@
 .slider__button-r {
 	display: none;
 }
-/* .slider__button {
-	width: 100px;
-	height: 100px;
-	background-color: #d7014d;
-	border-radius: 50%;
-	border: none;
-	position: absolute;
-	outline: #fdcf10;
-	left: -50px;
-	bottom: 50px;
-	transition: background-color 0.8s, transform 0.15s;
-	box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.199);
-} */
 .slider__symb {
 	width: 32px;
 	height: 100%;

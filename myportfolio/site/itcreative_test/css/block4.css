@@ -345,7 +345,6 @@ _:-ms-fullscreen,
 	border-radius: 15px;
 	margin-bottom: 10px;
 	border-color: #000851;
-	/* background-color: rgba(255, 255, 255, 0); */
 	font-size: 18px;
 	color: #000851e1;
 	position: relative;
@@ -552,7 +551,6 @@ _:-ms-fullscreen,
 	-webkit-box-ordinal-group: 2;
 	    -ms-flex-order: 1;
 	        order: 1;
-	/* margin-top: 30px; */
 }
 .cardSlide__sliderspray {
 	-webkit-box-ordinal-group: 1;
@@ -573,7 +571,7 @@ _:-ms-fullscreen,
 .purchase .cardSlide__control {
 	margin-bottom: 278px;
 	width: 100%;
-	margin-left: 16px;
+	/* margin-left: 16px; */
 }
 .purchase .cardSlide__sale {
 	margin-left: auto;
