@@ -449,6 +449,7 @@ select::-ms-expand {
 .cardBy__desc .cardBy__slidewrap {
 	height: 71px;
 }
+<<<<<<< HEAD
 .cardBy__slider {
 	min-width: 100%;
 	display: -webkit-box;
@@ -858,12 +859,33 @@ _:-ms-fullscreen,
 		margin-bottom: 20px;
 	}
 }
+=======
+	min-width: 100%;
+	position: absolute;
+	/* bottom: 0; */
+}
+.cardBy__slider-hide {
+	opacity: 0;
+	/* display: none; */
+	width: 100%;
+.cardSlide .cardBy__slidewrap {
+/* @media screen and (max-width: 1124px) {
+	.cardBy__desc {
+} */
+/* @media screen and (max-width:1024px) {
+
+
+@media screen and (max-width: 1124px) {
+	.cardSlide .cardBy__slidewrap {
+	.cardBy__desc .cardBy__slidewrap,
+>>>>>>> 7b825b4c8ba75c640a09573999cdf6ae0c8b18e2
 
 @media screen and (max-width: 650px) {
 	.order .select,
 	.order .purchase {
 		padding-right: 10px;
 		padding-left: 10px;
+<<<<<<< HEAD
 	}
 	.cardSlide,
 	.cardBy {
@@ -892,11 +914,14 @@ _:-ms-fullscreen,
 		left: calc(50% - 42%);
 		top: 75px;
 	}
+=======
+>>>>>>> 7b825b4c8ba75c640a09573999cdf6ae0c8b18e2
 	_:-ms-fullscreen,
 	:root .cardSlide__saleval {
 		line-height: 60px;
 		text-align: center;
 	}
+<<<<<<< HEAD
 	.cardBy__img {
 		width: 23%;
 		height: auto;
@@ -917,29 +942,51 @@ _:-ms-fullscreen,
 		width: 104px;
 		top: 11px;
 	}
+=======
+	.cardBy__desc {
+		width: 88%;
+	.cardBy__header {
+		font-size: 24px;
+>>>>>>> 7b825b4c8ba75c640a09573999cdf6ae0c8b18e2
 	.cardBy_list,
 	.item__cat,
 	.item__val {
 		font-size: 16px;
 		display: inline;
 		white-space: normal;
+<<<<<<< HEAD
 		line-height: 23px;
 	}
+=======
+		font-size: 16px;
+		display: inline;
+		white-space: normal;
+		line-height: 23px;
+>>>>>>> 7b825b4c8ba75c640a09573999cdf6ae0c8b18e2
 	.purchase__spray {
 		white-space: pre-line;
 	}
 }
 @media screen and (max-width: 380px) {
 	.select-wrapper,
+<<<<<<< HEAD
 	.cardBy__inp {
 		width: 100%;
 	}
 	.cardBy__form,
 	.cardBy__button {
+=======
+		width: 100%;
+	.cardBy__form,
+>>>>>>> 7b825b4c8ba75c640a09573999cdf6ae0c8b18e2
 		width: 90%;
 	}
 	.cardBy_list,
 	.purchase__spray {
+<<<<<<< HEAD
 		width: 100%;
 	}
 }
+=======
+		width: 100%;
+>>>>>>> 7b825b4c8ba75c640a09573999cdf6ae0c8b18e2
