@@ -142,6 +142,7 @@ _:-ms-fullscreen,
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
+	z-index: 10;
 }
 .cardSlide__symb {
 	width: 16px;
