@@ -237,10 +237,13 @@
 	.info__list {
 		margin-right: initial;
 	}
-	
-	.slideInfo {
+	.info__cont, .slideInfo{
 		width: 740px;
+	}
+	.slideInfo {
 		border-radius: 40px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.slideInfo__img {
 		height: 398px;
@@ -286,7 +289,7 @@
 @media screen and (max-width: 1024px) {
 }
 @media screen and (max-width: 750px) {
-	.slideInfo{
+	.info__cont, .slideInfo{
 		height: auto;
 	}
 	.block3 {
@@ -341,6 +344,8 @@
 		top:0;
 		margin-right: auto;
 		margin-left: auto;
+		position: relative;
+		opacity: 1;
 	}
 	.slideInfo__img {
 		width: 100%;

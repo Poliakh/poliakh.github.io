@@ -680,40 +680,9 @@ _:-ms-fullscreen,
 	margin-top: 20px;
 }
 
-@media screen and (max-width: 1280px) {
+.btnLeft, .btnRight{
+	cursor: pointer;
 }
-
-/* @media screen and (max-width: 1124px) {
-	.cardBy__desc {
-		width: 80%;
-	}
-} */
-/* @media screen and (max-width:1024px) {
-	.order .select, .order .purchase{
-		flex-direction: column;
-		align-items: center;
-		margin-top: 30px;
-	}
-	.cardBy{
-		margin-right: inherit;
-		margin-left: inherit;
-		width: 95%;
-	}
-	.purchase__cardSlide {
-		order: 0;
-		margin-top: 30px;
-	}
-	.cardSlide__sliderspray {
-		order: 1;
-	}
-	.cardBy__decs{
-		overflow: hidden;
-	}
-	.cardBy__head{
-		white-space: nowrap;
-	}
-	
-} */
 
 @media screen and (max-width: 1124px) {
 	.order .select,
