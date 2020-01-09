@@ -6,6 +6,36 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function browser_name() {
+  var browser_id = navigator.userAgent;
+  if (browser_id.search(/MSIE/) != -1 || browser_id.search(/Trident/) != -1) return 'IE';
+}
+
+function addPolifil() {
+  if (browser_name() == 'IE') {
+    //<script src="https://unpkg.com/element-closest"></script>
+    !function (e) {
+      var t = e.Element.prototype;
+      "function" != typeof t.matches && (t.matches = t.msMatchesSelector || t.mozMatchesSelector || t.webkitMatchesSelector || function (e) {
+        for (var t = (this.document || this.ownerDocument).querySelectorAll(e), o = 0; t[o] && t[o] !== this;) {
+          ++o;
+        }
+
+        return Boolean(t[o]);
+      }), "function" != typeof t.closest && (t.closest = function (e) {
+        for (var t = this; t && 1 === t.nodeType;) {
+          if (t.matches(e)) return t;
+          t = t.parentNode;
+        }
+
+        return null;
+      });
+    }(window);
+  }
+}
+
+addPolifil();
+
 var Slider =
 /*#__PURE__*/
 function () {
@@ -13,6 +43,7 @@ function () {
     _classCallCheck(this, Slider);
 
     this.slider = document.querySelector(".".concat(slider));
+    this.firstList = list;
     this.list = document.querySelector(".".concat(list));
     this.img = img;
     this.listImg = this.list.querySelectorAll(".".concat(this.img));
@@ -142,6 +173,8 @@ function () {
       var _this4 = this;
 
       this.slider.addEventListener('mouseup', function (e) {
+        _this4.list = document.querySelector(".".concat(_this4.firstList));
+
         if (e.target.closest(".".concat(_this4.btn_l))) {
           _this4.moveList('left');
         } else if (e.target.closest(".".concat(_this4.btn_r))) {
@@ -267,6 +300,7 @@ function () {
 
       this.actionElement('data-colorsl', color, newColor, 'cardBy__slider-hide');
       this.actionElement('data-colorhd', color, newColor, 'cardBy__header-hide');
+      this.actionElementOutSlider('data-colorpsl', color, newColor, 'popup__list-hide');
     }
   }, {
     key: "actionElement",
@@ -278,6 +312,21 @@ function () {
           list[i].classList.add(toggleClass);
         } else if (list[i].getAttribute(data) == newColor) {
           list[i].classList.remove(toggleClass);
+        }
+      }
+    }
+  }, {
+    key: "actionElementOutSlider",
+    value: function actionElementOutSlider(data, color, newColor, toggleClass) {
+      var list = document.querySelectorAll("[".concat(data, "]"));
+
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].getAttribute(data) == color) {
+          list[i].classList.add(toggleClass);
+          list[i].classList.remove('popup__list-check');
+        } else if (list[i].getAttribute(data) == newColor) {
+          list[i].classList.remove(toggleClass);
+          list[i].classList.add('popup__list-check');
         }
       }
     }

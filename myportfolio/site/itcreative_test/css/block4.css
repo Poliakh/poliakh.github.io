@@ -241,6 +241,7 @@ _:-ms-fullscreen,
 	font-size: 30px;
 	font-family: "GothamPro-Medium";
 	color: #000851;
+	white-space:nowrap;
 }
 .cardBy__header-hide {
 	display: none;
