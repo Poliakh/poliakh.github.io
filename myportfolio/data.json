@@ -1,4 +1,13 @@
 {
+	"itcreative": {
+		"header":"One test task",
+		"gitpage":"site/itcreative_test",
+		"github":"https://github.com/Poliakh/ITcreative_test",
+		"preview":"preview/itcreative.jpg",
+		"difficulty":"8",
+		"stack":["gulp","es6","flex","git","svg","resp"],
+		"descript":"Test job from one company."
+	},
 	"myclock": {
 		"header":"MyClock",
 		"gitpage":"site/myclocks/",
@@ -6,7 +15,7 @@
 		"preview":"preview/clockx2.jpg",
 		"difficulty":"7",
 		"stack":["sass","gulp","es6","flex","git","svg"],
-		"descript":"This is a small program with an alarm clock."
+		"descript":"This is a small program - simple clock with alarm."
 	},
 	"duhoot": {
 		"header":"Duhoot",
