@@ -6,7 +6,16 @@
 		"preview":"preview/itcreative.jpg",
 		"difficulty":"8",
 		"stack":["gulp","es6","flex","git","svg","resp"],
-		"descript":"Test job from one company."
+		"descript":"Test job from one company. </br> - </br>-"
+	},
+	"nvmed": {
+		"header":"NovaMed",
+		"gitpage":"site/nvmed",
+		"github":"https://github.com/Poliakh/NvMed",
+		"preview":"preview/nvmed.jpg",
+		"difficulty":"8",
+		"stack":["gulp","es6","flex","git","svg","resp","sass"],
+		"descript":"Этот сайт пока еще в стадии разработки поэтому функционал еще не полный"
 	},
 	"myclock": {
 		"header":"MyClock",
