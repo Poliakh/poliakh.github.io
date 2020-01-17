@@ -1,5 +1,6 @@
 {
 	"itcreative": {
+		"display":"true",
 		"header":"One test task",
 		"gitpage":"site/itcreative_test",
 		"github":"https://github.com/Poliakh/ITcreative_test",
@@ -9,15 +10,17 @@
 		"descript":"Test job from one company. </br> - </br>-"
 	},
 	"nvmed": {
+		"display":"none",
 		"header":"NovaMed",
 		"gitpage":"site/nvmed",
 		"github":"https://github.com/Poliakh/NvMed",
 		"preview":"preview/nvmed.jpg",
-		"difficulty":"8",
+		"difficulty":"7",
 		"stack":["gulp","es6","flex","git","svg","resp","sass"],
 		"descript":"Этот сайт пока еще в стадии разработки поэтому функционал еще не полный"
 	},
 	"myclock": {
+		"display":"true",
 		"header":"MyClock",
 		"gitpage":"site/myclocks/",
 		"github":"https://github.com/Poliakh/MyClocks",
@@ -27,6 +30,7 @@
 		"descript":"This is a small program - simple clock with alarm."
 	},
 	"duhoot": {
+		"display":"true",
 		"header":"Duhoot",
 		"gitpage":"site/duhoot",
 		"github":"https://github.com/Poliakh/Maket-duhoot.git",
@@ -36,6 +40,7 @@
 		"descript":"A description will appear here soon."
 	},
 	"surfase": {
+		"display":"true",
 		"header":"Surfase",
 		"gitpage":"site/surface",
 		"github":"https://github.com/Poliakh/Maket-surface.git",
@@ -45,6 +50,7 @@
 		"descript":"A description will appear here soon."
 	},
 	"upbusiness": {
+		"display":"true",
 		"header":"UpBusiness",
 		"gitpage":"site/upbusiness",
 		"github":"https://github.com/Poliakh/03-Maket.git",
@@ -54,6 +60,7 @@
 		"descript":"A description will appear here soon."
 	},
 	"biseline": {
+		"display":"true",
 		"header":"Bise-Line",
 		"gitpage":"site/bislite",
 		"github":"https://github.com/Poliakh/maket-02.git",
