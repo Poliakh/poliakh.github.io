@@ -17,18 +17,9 @@
 		"preview":"preview/nvmed.jpg",
 		"difficulty":"7",
 		"stack":["gulp","es6","flex","git","svg","resp","sass"],
-		"descript":"Этот сайт пока еще в стадии разработки поэтому функционал еще не полный"
+		"descript":"Этот сайт все еще в стадии разработки функционал еще не полный могут быть проблемы с отображением на некоторых браузерах. Сайт планирует быть законченным до 20.03.2020"
 	},
-	"myclock": {
-		"display":"true",
-		"header":"MyClock",
-		"gitpage":"site/myclocks/",
-		"github":"https://github.com/Poliakh/MyClocks",
-		"preview":"preview/clockx2.jpg",
-		"difficulty":"7",
-		"stack":["sass","gulp","es6","flex","git","svg"],
-		"descript":"This is a small program - simple clock with alarm."
-	},
+	
 	"duhoot": {
 		"display":"true",
 		"header":"Duhoot",
