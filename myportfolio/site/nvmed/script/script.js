@@ -1,3 +1,4 @@
+"use strict"
 window.onload = function () {
 	const main = document.querySelector('main');
 	main.classList.add('ready');
@@ -140,6 +141,7 @@ if(window.location.href.indexOf('/expert')>=0){
 	}
 }
 if(window.location.href.indexOf('/services')>=0){
+	
 	class AddTables {
 		constructor(idWrapTables, wrapListCards) {
 			this.finishCycle = false;
@@ -222,15 +224,14 @@ if(window.location.href.indexOf('/services')>=0){
 		}
 	}
 	
-	const addTables = new AddTables('priseWrap','.serviceList');
-	
+	const addPrises = new AddTables('priseWrap','.serviceList');
 	//hide price
-	addTables.wrap.addEventListener('click', (e) => {
+	addPrises.wrap.addEventListener('click', (e) => {
 		if (e.target.closest('.services__items')) {
 			let urlTables = e.target.getAttribute('data-linkToTables');
 			let serviceList = document.querySelector('.serviceList');
 			hideCards(serviceList);
-			addTables.appendTables(urlTables);
+			addPrises.appendTables(urlTables);
 		}
 	})
 	
@@ -238,33 +239,42 @@ if(window.location.href.indexOf('/services')>=0){
 	function hideCards(elem){
 		elem.classList.add('serviceList-opacity');
 		setTimeout(() => {
-			// addTables.wrap.removeChild(elem);
+			// addPrises.wrap.removeChild(elem);
 			btnVisbleToggle();
 		}, 800);
 	}
 	
-	function btnVisbleToggle(){
-	
+	function btnVisbleToggle(state = 'visible'){
 		let btn = document.querySelector('.service__btnBack');
-		btn.classList.toggle('service__visible');
+		if(state == 'visible'){
+			btn.classList.add('service__visible');
+		}else if(state == 'hide'){
+			btn.classList.remove('service__visible');
+		}
 	}
 	
+	
+	
 	function backService(){
+		console.log(addPrises);
+	
+		
 		const btn = document.querySelector('.service__btnBack');
 		btn.addEventListener('click', (e)=>{
 			const childremove = document.querySelector('.services__wrapper');
 			if(e.target.closest('.service__btnBack')){
 				
-				(childremove) ? addTables.wrap.removeChild(childremove): null;
-				addTables.wrap.appendChild(addTables.cloneListCards).classList.remove('serviceList-opacity');
-				btnVisbleToggle();
+				(childremove) ? addPrises.wrap.removeChild(childremove): null;
+				addPrises.wrap.appendChild(addPrises.cloneListCards).classList.remove('serviceList-opacity');
+				btnVisbleToggle('hide');
 			}
 		})
 	}
 	backService();
+	console.log(addPrises.wrap);
 	
 	
-	addTables.wrap.addEventListener('click', (e)=>{
+	addPrises.wrap.addEventListener('click', (e)=>{
 		const target = e.target.closest('.cap');
 		if(target){
 			target.closest('table').classList.toggle('visibleTable');
@@ -398,7 +408,7 @@ const selectDate = (popupId, input, activeEl, autoCloseClassName) => {
 
 selectDate('popupForm', 'datepicker-here', 'my-datepicker', 'datepicker--cell-day');
 
-const myForm = new Popup('formWrap', '.btnFormActiv', '.closeButton', missed = false)
+const myForm = new Popup('formWrap', '.btnFormActiv', '.closeButton', false)
 
 let burger = document.getElementById('btnNav');
 burger.addEventListener('click', () => {

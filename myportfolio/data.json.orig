@@ -1,0 +1,77 @@
+{
+	"itcreative": {
+		"display":"true",
+		"header":"One test task",
+		"gitpage":"site/itcreative_test",
+		"github":"https://github.com/Poliakh/ITcreative_test",
+		"preview":"preview/itcreative.jpg",
+		"difficulty":"8",
+		"stack":["gulp","es6","flex","git","svg","resp"],
+		"descript":"Test job from one company. </br> - </br>-"
+	},
+	"nvmed": {
+		"display":"none",
+		"header":"NovaMed",
+		"gitpage":"https://poliakh.github.io/myportfolio/site/nvmed/",
+		"github":"https://github.com/Poliakh/NvMed",
+		"preview":"preview/nvmed.jpg",
+		"difficulty":"7",
+		"stack":["gulp","es6","flex","git","svg","resp","sass"],
+<<<<<<< HEAD
+		"descript":"Этот сайт все еще в стадии разработки функционал еще не полный могут быть проблемы с отображением на некоторых браузерах. Сайт планирует быть законченным до 20.03.2020"
+=======
+		"descript":"Этот сайт в процессе разработки. Функционал не полный, некоторые элементы работают не корректно"
+	},
+	"myclock": {
+		"display":"true",
+		"header":"MyClock",
+		"gitpage":"site/myclocks/",
+		"github":"https://github.com/Poliakh/MyClocks",
+		"preview":"preview/clockx2.jpg",
+		"difficulty":"7",
+		"stack":["sass","gulp","es6","flex","git","svg"],
+		"descript":"This is a small program - simple clock with alarm."
+>>>>>>> f6570fa58e1d7b2f7fc34bbaed5dc25f72110264
+	},
+	
+	"duhoot": {
+		"display":"true",
+		"header":"Duhoot",
+		"gitpage":"site/duhoot",
+		"github":"https://github.com/Poliakh/Maket-duhoot.git",
+		"preview":"preview/duhootx2.jpg",
+		"difficulty":"7",
+		"stack":["sass","gulp","es6","flex","git","svg","resp"],
+		"descript":"A description will appear here soon."
+	},
+	"surfase": {
+		"display":"true",
+		"header":"Surfase",
+		"gitpage":"site/surface",
+		"github":"https://github.com/Poliakh/Maket-surface.git",
+		"preview":"preview/surfasex2.jpg",
+		"difficulty":"6",
+		"stack":["sass","gulp","flex","git","svg","resp"],
+		"descript":"A description will appear here soon."
+	},
+	"upbusiness": {
+		"display":"true",
+		"header":"UpBusiness",
+		"gitpage":"site/upbusiness",
+		"github":"https://github.com/Poliakh/03-Maket.git",
+		"preview":"preview/upbusinessx2.jpg",
+		"difficulty":"5",
+		"stack":["sass","gulp","float","git"],
+		"descript":"A description will appear here soon."
+	},
+	"biseline": {
+		"display":"true",
+		"header":"Bise-Line",
+		"gitpage":"site/bislite",
+		"github":"https://github.com/Poliakh/maket-02.git",
+		"preview":"preview/biselinex2.jpg",
+		"difficulty":"3",
+		"stack":["sass","gulp","float","git"],
+		"descript":"Simple mockup with lots of elements. Applied float technology."
+	}
+}
