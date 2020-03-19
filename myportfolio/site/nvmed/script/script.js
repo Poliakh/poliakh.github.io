@@ -47,23 +47,21 @@ class Popup {
 	}
 }
 
-if(window.location.href.indexOf('/expert')>=0){
+// if(window.location.href.indexOf('/expert')>=0){
 	class PersonService {
-	
 		constructor(url) {
 			this.url = url;
-			this.getResource();
 		}
 		async getResource() {
 			const res = await fetch(this.url);
 			if (!res.ok) {
 				throw new Error(`Could not fetch ${this.url}), received ${res.status}`);
 			}
-			return await res.json();
+			return res.json();
 		}
-	
 		async getPersonList() {
 			const res = await this.getResource();
+			
 			return [res.persons, res.urlImages];
 		}
 		async getListFullName() {
@@ -72,20 +70,16 @@ if(window.location.href.indexOf('/expert')>=0){
 				return `${item.surename} ${item.name} ${item.patronymic}`
 			})
 		}
-	
 		async getPerson(key) {
 			const [list, url] = await this.getPersonList();
 			return [list.find(item => item.id === key), url]
 		}
 	}
 	
-	if (window.location.href.indexOf('/expert') >= 0) {
-		console.log('ok expert');
 		
 		function createCard(obj, urlImage) {
 			const CardPerson = document.getElementById("CardsDoc");
 			const newCard = CardPerson.cloneNode(true);
-			// console.log(obj);
 	
 			newCard.classList.remove("hidden");
 			newCard.id = obj.id;
@@ -119,7 +113,10 @@ if(window.location.href.indexOf('/expert')>=0){
 		const linkToJson = "./data/persons.json"
 		const persons = new PersonService(linkToJson);
 	
+	if (window.location.href.indexOf('/expert') >= 0) {
+	
 		appendList();
+	}
 	
 		async function createPopup(target) {
 			const CardPerson = document.getElementById("popupDoc");
@@ -131,15 +128,14 @@ if(window.location.href.indexOf('/expert')>=0){
 		}
 	
 		class doctorPopup extends Popup {
-			popUpShow(target) {
-				super.popUpShow(target);
-				createPopup(target)
+			popUpShow(popup) {
+				super.popUpShow(popup);
+				createPopup(popup)
 			}
 	
 		}
 		const myDoctor = new doctorPopup("doctorPopup", ".cardPerson", ".closeButton", "popupDoc");
-	}
-}
+// }
 if(window.location.href.indexOf('/services')>=0){
 	
 	class AddTables {
@@ -147,20 +143,18 @@ if(window.location.href.indexOf('/services')>=0){
 			this.finishCycle = false;
 			this.wrap = document.getElementById(idWrapTables);
 			this.count = 0;
+			this.curAnch = 0;
 			this.listTables = "";
 			this.nameListCards = wrapListCards;
-			this.cloneListCards = (this.nameListCards) ? document.querySelector(this.nameListCards).cloneNode(true): null;
-			console.log(this.wrap);
-			console.log(this.cloneListCards);
-			
-			
+			this.header = this.wrap.querySelector('h1').innerText;
+			this.cloneListCards = (this.nameListCards) ? document.querySelector(this.nameListCards).cloneNode(true) : null;
 		}
-		
+	
 		createLinkTable(url, numberList) {
 			let link = url.slice(url.indexOf('/d/') + 3, url.lastIndexOf('/'));
 			return `https://spreadsheets.google.com/feeds/list/${link}/${numberList}/public/values?alt=json`
 		}
-	
+		
 		async getJson(url) {
 			let res = await fetch(url)
 			if (res.ok) {
@@ -180,7 +174,8 @@ if(window.location.href.indexOf('/services')>=0){
 							<td>${obj[index]['gsx$cost']['$t']}</td>
 						</tr>`
 			}
-			const table =`<div class="tableWrap fade-up">
+			const table = `<div class="tableWrap fade-up">
+							<a name="anchor_${this.curAnch++}" class="anchor"></a>
 							<table class="tableCons">
 								<caption class="cap">
 									<div class="cap__head">${obj[1]['gsx$denomination']['$t']}</div>
@@ -204,28 +199,66 @@ if(window.location.href.indexOf('/services')>=0){
 	
 		async appendTables(link) {
 			let elem = document.createElement('div');
-			elem.className='services__wrapper';
+			elem.className = 'services__wrapper';
 			let count = 0;
 			while (!this.finishCycle && count < 50) {
 				count++;
-				
 				this.url = this.createLinkTable(link, count);
 				const json = await this.getJson(this.url);
 				if (json) {
 					const obj = json.feed.entry;
 					const table = await this.createPrice(obj);
+					if(count==1){
+						this.changeHeader(obj[0].gsx$denomination.$t)
+					}
 					elem.insertAdjacentHTML('beforeEnd', table);
-				}else{break}
+				} else { break }
 			}
 			const reaplceElem = document.querySelector(this.nameListCards);
 			this.wrap.replaceChild(elem, reaplceElem);
+			this.setHeightTablees();
+			
 			// count = 0;
 			this.finishCycle = !this.finishCycle;
 		}
+		setHeightTablees(){
+			const tableList = this.wrap.querySelectorAll('table');
+			tableList.forEach((item)=>{
+				this.toggleHeight(item.parentElement);
+			})
+		}
+		toggleHeight(tableWrap, classVisible = 'visibleTable') {
+			if (tableWrap.lastElementChild.matches(`.${classVisible}`)) {
+				tableWrap.style.height = getMinMaxHeight(tableWrap)[1]+'px';
+				const anchorName = tableWrap.querySelector('.anchor').getAttribute('name');
+				setTimeout(() => {
+					window.location.hash=anchorName
+				}, 500);
+			} else {
+				tableWrap.style.height = getMinMaxHeight(tableWrap)[0]+'px';
+	
+			}
+			function getMinMaxHeight(tabElem) {
+				const heightmax = parseInt(getComputedStyle(tabElem.querySelector('table')).height);
+				const heightmin = parseInt(getComputedStyle(tabElem.querySelector('caption')).height);
+				return [heightmin, heightmax]
+			}
+		}
+		changeHeader(text){
+			if(text){
+				this.wrap.querySelector('h1').innerText = text;
+			}else{
+				this.wrap.querySelector('h1').innerText = this.header;
+			}
+		}
 	}
 	
-	const addPrises = new AddTables('priseWrap','.serviceList');
+	const addPrises = new AddTables('priseWrap', '.serviceList');
 	//hide price
+	
+	// function openPriceAction(){
+	
+	// append prices
 	addPrises.wrap.addEventListener('click', (e) => {
 		if (e.target.closest('.services__items')) {
 			let urlTables = e.target.getAttribute('data-linkToTables');
@@ -235,8 +268,8 @@ if(window.location.href.indexOf('/services')>=0){
 		}
 	})
 	
-	
-	function hideCards(elem){
+	// hide cards servis items
+	function hideCards(elem) {
 		elem.classList.add('serviceList-opacity');
 		setTimeout(() => {
 			// addPrises.wrap.removeChild(elem);
@@ -244,60 +277,57 @@ if(window.location.href.indexOf('/services')>=0){
 		}, 800);
 	}
 	
-	function btnVisbleToggle(state = 'visible'){
+	// toggle visible button to go  servise items cards (button to back)
+	function btnVisbleToggle(state = 'visible') {
 		let btn = document.querySelector('.service__btnBack');
-		if(state == 'visible'){
+		if (state == 'visible') {
 			btn.classList.add('service__visible');
-		}else if(state == 'hide'){
+		} else if (state == 'hide') {
 			btn.classList.remove('service__visible');
 		}
 	}
 	
-	
-	
-	function backService(){
-		console.log(addPrises);
-	
-		
+	// action button to back
+	function backService() {
 		const btn = document.querySelector('.service__btnBack');
-		btn.addEventListener('click', (e)=>{
+		btn.addEventListener('click', (e) => {
 			const childremove = document.querySelector('.services__wrapper');
-			if(e.target.closest('.service__btnBack')){
-				
-				(childremove) ? addPrises.wrap.removeChild(childremove): null;
+			if (e.target.closest('.service__btnBack')) {
+	
+				(childremove) ? addPrises.wrap.removeChild(childremove) : null;
 				addPrises.wrap.appendChild(addPrises.cloneListCards).classList.remove('serviceList-opacity');
 				btnVisbleToggle('hide');
+				addPrises.changeHeader();
 			}
 		})
 	}
 	backService();
-	console.log(addPrises.wrap);
 	
-	
-	addPrises.wrap.addEventListener('click', (e)=>{
+	// open/close table of price on click
+	addPrises.wrap.addEventListener('click', (e) => {
 		const target = e.target.closest('.cap');
-		if(target){
+		if (target) {
 			target.closest('table').classList.toggle('visibleTable');
 			const children = target.closest('.services__wrapper').children;
 			const thisTables = target.closest('.tableWrap');
 	
+			addPrises.toggleHeight(thisTables);
+	
 			for (let i = 0; i < children.length; i++) {
-				if(children[i] !== thisTables){
+				if (children[i] !== thisTables) {
 					children[i].querySelector('table').classList.remove('visibleTable');
+					addPrises.toggleHeight(children[i]);
+					
 				}
 			}
 		}
 	})
 	
+	
 	// console.log(window.location.href.indexOf('/services2')>=0);
 	
 	 //window.location.hash="someId"; //Переход к якорю
 }
-// document.addEventListener('click', (e) => {
-// 	// console.log(e.target);
-// })
-
-
 
 let myDatePicker = $('.datepicker-here').datepicker({
 	// autoClose: true,
@@ -331,7 +361,6 @@ let myDatePicker = $('.datepicker-here').datepicker({
 	}
 })
 
-
 jQuery(function ($) {
 	// $("#date").mask("99/99/9999");
 	$("#user_phone").mask("+38(099) 999-99-99");
@@ -341,6 +370,7 @@ jQuery(function ($) {
 
 
 const selectExpert = (popupId, selectArea, selectItem) => {
+	
 	const popupForm = document.getElementById(popupId);
 	let selectHead = document.querySelector(`.${selectArea}`);
 
