@@ -215,10 +215,10 @@ if(window.location.href.indexOf('/services')>=0){
 				} else { break }
 			}
 			const reaplceElem = document.querySelector(this.nameListCards);
+			visibleToggleSpinner(false);
+	
 			this.wrap.replaceChild(elem, reaplceElem);
 			this.setHeightTablees();
-			
-			// count = 0;
 			this.finishCycle = !this.finishCycle;
 		}
 		setHeightTablees(){
@@ -254,16 +254,15 @@ if(window.location.href.indexOf('/services')>=0){
 	}
 	
 	const addPrises = new AddTables('priseWrap', '.serviceList');
-	//hide price
-	
-	// function openPriceAction(){
 	
 	// append prices
 	addPrises.wrap.addEventListener('click', (e) => {
 		if (e.target.closest('.services__items')) {
+	
 			let urlTables = e.target.getAttribute('data-linkToTables');
 			let serviceList = document.querySelector('.serviceList');
 			hideCards(serviceList);
+			visibleToggleSpinner(true)
 			addPrises.appendTables(urlTables);
 		}
 	})
@@ -295,6 +294,8 @@ if(window.location.href.indexOf('/services')>=0){
 			if (e.target.closest('.service__btnBack')) {
 	
 				(childremove) ? addPrises.wrap.removeChild(childremove) : null;
+				visibleToggleSpinner(false);
+	
 				addPrises.wrap.appendChild(addPrises.cloneListCards).classList.remove('serviceList-opacity');
 				btnVisbleToggle('hide');
 				addPrises.changeHeader();
@@ -370,7 +371,7 @@ jQuery(function ($) {
 
 
 const selectExpert = (popupId, selectArea, selectItem) => {
-	
+
 	const popupForm = document.getElementById(popupId);
 	let selectHead = document.querySelector(`.${selectArea}`);
 
@@ -444,3 +445,13 @@ let burger = document.getElementById('btnNav');
 burger.addEventListener('click', () => {
 	burger.classList.toggle('active');
 })
+
+function visibleToggleSpinner(state){
+	const spinner = document.querySelector('.spinner');
+	if(state===true){
+		spinner.classList.add('visiblespinner')
+	}
+	if(state===false){
+		spinner.classList.remove('visiblespinner')
+	}
+}
