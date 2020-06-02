@@ -482,9 +482,7 @@ button {
   height: 100%;
   position: fixed;
   pointer-events: none;
-  z-index: 18;
-  background: -o-radial-gradient(var(--cursorX) var(--cursorY), circle var(--radius), rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background: radial-gradient(circle var(--radius) at var(--cursorX) var(--cursorY), rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%); }
+  z-index: 18; }
 
 .nav {
   width: 100%;
