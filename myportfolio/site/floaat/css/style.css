@@ -791,7 +791,7 @@ button {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  min-width: 850px;
+  min-width: 740px;
   margin-top: 60px;
   margin-left: 3vw;
   padding-bottom: 150px;
@@ -1381,8 +1381,8 @@ button {
 
 .slider {
   max-width: 1075px;
-  width: 75%;
   height: 335px;
+  width: auto;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -1573,8 +1573,34 @@ button {
   background-size: contain;
   position: absolute;
   z-index: 10;
-  top: 48%;
+  top: 52%;
   right: 80%; }
+
+@media screen and (max-width: 600px) {
+  .slider {
+    margin-top: 6vh; }
+  .slider__control {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    bottom: -75%; }
+  .slider__btnRight {
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  .slider__btnLeft {
+    -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%); }
+  .slider__btnLeft:hover:after, .slider__btnRight:hover:after {
+    height: 70px;
+    width: 70px; }
+  .ourteam__header {
+    font-size: 32px;
+    padding-top: 28px; } }
 
 footer {
   width: 100%;
